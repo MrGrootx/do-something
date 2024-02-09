@@ -1,0 +1,453 @@
+[
+   {
+     "id": 1,
+     "name": "John Doe",
+     "age": 25,
+     "city": "New York",
+     "active": true,
+     "children": [1, 2, 3],
+     "details": { "height": 175, "weight": 70 }
+   },
+   {
+     "id": 2,
+     "name": "Jane Smith",
+     "age": 30,
+     "city": "Los Angeles",
+     "active": false,
+     "children": [4, 5],
+     "details": { "height": 160, "weight": 55 }
+   },
+   {
+     "id": 3,
+     "name": "Bob Johnson",
+     "age": 28,
+     "city": "Chicago",
+     "active": true,
+     "children": [6, 7],
+     "details": { "height": 180, "weight": 80 }
+   },
+   {
+     "id": 4,
+     "name": "Alice White",
+     "age": 35,
+     "city": "Seattle",
+     "active": false,
+     "children": [8, 9],
+     "details": { "height": 165, "weight": 68 }
+   },
+   {
+     "id": 5,
+     "name": "Charlie Brown",
+     "age": 40,
+     "city": "San Francisco",
+     "active": true,
+     "children": [10, 11],
+     "details": { "height": 175, "weight": 72 }
+   },
+   {
+     "id": 6,
+     "name": "Eva Green",
+     "age": 22,
+     "city": "Miami",
+     "active": false,
+     "children": [12, 13],
+     "details": { "height": 170, "weight": 62 }
+   },
+   {
+     "id": 7,
+     "name": "David Black",
+     "age": 33,
+     "city": "Houston",
+     "active": true,
+     "children": [14, 15],
+     "details": { "height": 185, "weight": 78 }
+   },
+   {
+     "id": 8,
+     "name": "Sophia White",
+     "age": 27,
+     "city": "Phoenix",
+     "active": false,
+     "children": [16, 17],
+     "details": { "height": 168, "weight": 67 }
+   },
+   {
+     "id": 9,
+     "name": "James Johnson",
+     "age": 29,
+     "city": "Philadelphia",
+     "active": true,
+     "children": [18, 19],
+     "details": { "height": 177, "weight": 73 }
+   },
+   {
+     "id": 10,
+     "name": "Lily Brown",
+     "age": 31,
+     "city": "Dallas",
+     "active": false,
+     "children": [20, 21],
+     "details": { "height": 162, "weight": 58 }
+   },
+   {
+     "id": 11,
+     "name": "Mason Green",
+     "age": 26,
+     "city": "Denver",
+     "active": true,
+     "children": [22, 23],
+     "details": { "height": 179, "weight": 65 }
+   },
+   {
+     "id": 12,
+     "name": "Olivia Black",
+     "age": 34,
+     "city": "Atlanta",
+     "active": false,
+     "children": [24, 25],
+     "details": { "height": 160, "weight": 53 }
+   },
+   {
+     "id": 13,
+     "name": "William White",
+     "age": 23,
+     "city": "Boston",
+     "active": true,
+     "children": [26, 27],
+     "details": { "height": 182, "weight": 75 }
+   },
+   {
+     "id": 14,
+     "name": "Ava Johnson",
+     "age": 37,
+     "city": "San Diego",
+     "active": false,
+     "children": [28, 29],
+     "details": { "height": 167, "weight": 71 }
+   },
+   {
+     "id": 15,
+     "name": "Henry Green",
+     "age": 28,
+     "city": "Portland",
+     "active": true,
+     "children": [30, 31],
+     "details": { "height": 176, "weight": 69 }
+   },
+   {
+     "id": 16,
+     "name": "Emma Brown",
+     "age": 36,
+     "city": "Seattle",
+     "active": false,
+     "children": [32, 33],
+     "details": { "height": 171, "weight": 60 }
+   },
+   {
+     "id": 17,
+     "name": "Daniel White",
+     "age": 32,
+     "city": "Los Angeles",
+     "active": true,
+     "children": [34, 35],
+     "details": { "height": 184, "weight": 77 }
+   },
+   {
+     "id": 18,
+     "name": "Chloe Black",
+     "age": 24,
+     "city": "Chicago",
+     "active": false,
+     "children": [36, 37],
+     "details": { "height": 166, "weight": 64 }
+   },
+   {
+     "id": 19,
+     "name": "Michael Green",
+     "age": 39,
+     "city": "San Francisco",
+     "active": true,
+     "children": [38, 39],
+     "details": { "height": 178, "weight": 74 }
+   },
+   {
+     "id": 20,
+     "name": "Grace Johnson",
+     "age": 29,
+     "city": "Miami",
+     "active": false,
+     "children": [40, 41],
+     "details": { "height": 163, "weight": 56 }
+   },
+   {
+     "id": 21,
+     "name": "Joseph Brown",
+     "age": 25,
+     "city": "Houston",
+     "active": true,
+     "children": [42, 43],
+     "details": { "height": 180, "weight": 68 }
+   },
+   {
+     "id": 22,
+     "name": "Avery White",
+     "age": 35,
+     "city": "Phoenix",
+     "active": false,
+     "children": [44, 45],
+     "details": { "height": 172, "weight": 59 }
+   },
+   {
+     "id": 23,
+     "name": "Abigail Green",
+     "age": 27,
+     "city": "Philadelphia",
+     "active": true,
+     "children": [46, 47],
+     "details": { "height": 175, "weight": 72 }
+   },
+   {
+     "id": 24,
+     "name": "Ethan Black",
+     "age": 31,
+     "city": "Dallas",
+     "active": false,
+     "children": [48, 49],
+     "details": { "height": 168, "weight": 61 }
+   },
+   {
+     "id": 25,
+     "name": "Harper White",
+     "age": 22,
+     "city": "Denver",
+     "active": true,
+     "children": [50, 51],
+     "details": { "height": 183, "weight": 76 }
+   },
+   {
+     "id": 26,
+     "name": "Isaac Brown",
+     "age": 38,
+     "city": "Atlanta",
+     "active": false,
+     "children": [52, 53],
+     "details": { "height": 164, "weight": 63 }
+   },
+   {
+     "id": 27,
+     "name": "Madison Green",
+     "age": 26,
+     "city": "Boston",
+     "active": true,
+     "children": [54, 55],
+     "details": { "height": 177, "weight": 70 }
+   },
+   {
+     "id": 28,
+     "name": "Jackson Black",
+     "age": 33,
+     "city": "San Diego",
+     "active": false,
+     "children": [56, 57],
+     "details": { "height": 166, "weight": 55 }
+   },
+   {
+     "id": 29,
+     "name": "Aria White",
+     "age": 29,
+     "city": "Portland",
+     "active": true,
+     "children": [58, 59],
+     "details": { "height": 180, "weight": 73 }
+   },
+   {
+     "id": 30,
+     "name": "Carter Green",
+     "age": 35,
+     "city": "Seattle",
+     "active": false,
+     "children": [60, 61],
+     "details": { "height": 169, "weight": 66 }
+   },
+   {
+     "id": 31,
+     "name": "Scarlett Brown",
+     "age": 24,
+     "city": "Los Angeles",
+     "active": true,
+     "children": [62, 63],
+     "details": { "height": 182, "weight": 78 }
+   },
+   {
+     "id": 32,
+     "name": "Wyatt Johnson",
+     "age": 36,
+     "city": "Chicago",
+     "active": false,
+     "children": [64, 65],
+     "details": { "height": 161, "weight": 59 }
+   },
+   {
+     "id": 33,
+     "name": "Nova Green",
+     "age": 28,
+     "city": "San Francisco",
+     "active": true,
+     "children": [66, 67],
+     "details": { "height": 175, "weight": 71 }
+   },
+   {
+     "id": 34,
+     "name": "Leo Black",
+     "age": 32,
+     "city": "Miami",
+     "active": false,
+     "children": [68, 69],
+     "details": { "height": 167, "weight": 62 }
+   },
+   {
+     "id": 35,
+     "name": "Luna White",
+     "age": 40,
+     "city": "Houston",
+     "active": true,
+     "children": [70, 71],
+     "details": { "height": 178, "weight": 75 }
+   },
+   {
+     "id": 36,
+     "name": "Isaiah Brown",
+     "age": 23,
+     "city": "Phoenix",
+     "active": false,
+     "children": [72, 73],
+     "details": { "height": 168, "weight": 64 }
+   },
+   {
+     "id": 37,
+     "name": "Hazel Johnson",
+     "age": 33,
+     "city": "Philadelphia",
+     "active": true,
+     "children": [74, 75],
+     "details": { "height": 181, "weight": 77 }
+   },
+   {
+     "id": 38,
+     "name": "Eli Green",
+     "age": 29,
+     "city": "Dallas",
+     "active": false,
+     "children": [76, 77],
+     "details": { "height": 170, "weight": 60 }
+   },
+   {
+     "id": 39,
+     "name": "Aubrey Black",
+     "age": 27,
+     "city": "Denver",
+     "active": true,
+     "children": [78, 79],
+     "details": { "height": 176, "weight": 69 }
+   },
+   {
+     "id": 40,
+     "name": "Oliver White",
+     "age": 38,
+     "city": "Atlanta",
+     "active": false,
+     "children": [80, 81],
+     "details": { "height": 162, "weight": 58 }
+   },
+   {
+     "id": 41,
+     "name": "Paisley Green",
+     "age": 26,
+     "city": "Boston",
+     "active": true,
+     "children": [82, 83],
+     "details": { "height": 173, "weight": 74 }
+   },
+   {
+     "id": 42,
+     "name": "Maverick Brown",
+     "age": 31,
+     "city": "San Diego",
+     "active": false,
+     "children": [84, 85],
+     "details": { "height": 165, "weight": 67 }
+   },
+   {
+     "id": 43,
+     "name": "Isla White",
+     "age": 34,
+     "city": "Portland",
+     "active": true,
+     "children": [86, 87],
+     "details": { "height": 179, "weight": 71 }
+   },
+   {
+     "id": 44,
+     "name": "Theodore Black",
+     "age": 22,
+     "city": "Seattle",
+     "active": false,
+     "children": [88, 89],
+     "details": { "height": 164, "weight": 55 }
+   },
+   {
+     "id": 45,
+     "name": "Aurora Johnson",
+     "age": 37,
+     "city": "Los Angeles",
+     "active": true,
+     "children": [90, 91],
+     "details": { "height": 181, "weight": 76 }
+   },
+   {
+     "id": 46,
+     "name": "Caleb Green",
+     "age": 28,
+     "city": "Chicago",
+     "active": false,
+     "children": [92, 93],
+     "details": { "height": 167, "weight": 63 }
+   },
+   {
+     "id": 47,
+     "name": "Lydia Brown",
+     "age": 30,
+     "city": "San Francisco",
+     "active": true,
+     "children": [94, 95],
+     "details": { "height": 175, "weight": 68 }
+   },
+   {
+     "id": 48,
+     "name": "Jack Black",
+     "age": 39,
+     "city": "Miami",
+     "active": false,
+     "children": [96, 97],
+     "details": { "height": 169, "weight": 72 }
+   },
+   {
+     "id": 49,
+     "name": "Penelope White",
+     "age": 25,
+     "city": "Houston",
+     "active": true,
+     "children": [98, 99],
+     "details": { "height": 183, "weight": 79 }
+   },
+   {
+     "id": 50,
+     "name": "Miles Brown",
+     "age": 33,
+     "city": "Phoenix",
+     "active": false,
+     "children": [100, 101],
+     "details": { "height": 166, "weight": 61 }
+   }
+ ]
+ 

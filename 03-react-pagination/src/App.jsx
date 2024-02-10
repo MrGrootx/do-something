@@ -1,65 +1,48 @@
-import "./index.css";
-
-import Data from "./data.json";
 import { useState } from "react";
+import "./index.css";
+import { useEffect } from "react";
+import Posts from "./components/Posts";
+import { Pagination } from "./components/Pagination";
 
+// https://jsonplaceholder.typicode.com/posts
 export default function App() {
+  const [post, setPost] = useState([]);
+  const [loading, setLoading] = useState(false);
+
   const [currentPage, setCurrentPage] = useState(1);
-  const recordsPerPage = 5;
-  const lastIndex = currentPage * recordsPerPage;
-  const firstIndex = lastIndex - recordsPerPage;
-  const records = Data.slice(firstIndex, lastIndex);
-  const npage = Math.ceil(Data.length / recordsPerPage);
-  const numbers = [...Array(npage + 1).keys()].slice(1);
+  const [postsPerPage] = useState(5);
+
+  useEffect(() => {
+    const fetchPost = async () => {
+      setLoading(true);
+      const response = await fetch(
+        "https://jsonplaceholder.typicode.com/posts"
+      );
+      const data = await response.json();
+      setPost(data);
+      setLoading(false);
+    };
+
+    fetchPost();
+  }, []);
+
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentPost = post.slice(indexOfFirstPost, indexOfLastPost);
+
+  const paginate = (pagenumber) => setCurrentPage(pagenumber);
 
   return (
-    <div>
-      <table>
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>City</th>
-          </tr>
-        </thead>
-        <tbody>
-          {records.map((d, index) => {
-            return (
-              <tr key={index}>
-                <td>{d.id}</td>
-                <td>{d.name}</td>
-                <td>{d.city}</td>
-              </tr>
-            );
-          })}
-        </tbody>
-      </table>
-
-      <nav>
-        <ul>
-          <li>
-            <a href="#" onClick={prePage}>
-              Previous
-            </a>
-          </li>
-          {numbers.map((n, i) => {
-            <li key={i} className={`${currentPage === n ? "active" : ""}`}>
-              <a href="#" onClick={() => changeCPage(n)}>
-                {n}
-              </a>
-            </li>;
-          })}
-          <li>
-            <a href="#" onClick={nextPage}>
-              Next
-            </a>
-          </li>
-        </ul>
-      </nav>
+    <div className="m-4">
+      <h1 className=" text-4xl text-center m-5 font-semibold text-red-600">
+        Posts
+      </h1>
+      <Posts posts={currentPost} loading={loading} />
+      <Pagination
+        postsPerPage={postsPerPage}
+        totalpost={post.length}
+        paginate={paginate}
+      />
     </div>
   );
-
-  function nextPage() {}
-  function prePage() {}
-  function changeCPage(id) {}
 }

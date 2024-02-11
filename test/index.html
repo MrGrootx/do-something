@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webhook Message Sender</title>
+</head>
+<body>
+    <h1>Enter Webhook URLs (up to 50):</h1>
+    <div id="webhookInputs">
+    </div>
+    <button onclick="sendMessage()">Send</button>
+
+    <script>
+        function addWebhookInput() {
+            var container = document.getElementById('webhookInputs');
+            var input = document.createElement('input');
+            input.type = 'text';
+            input.placeholder = 'Enter webhook URL';
+            container.appendChild(input);
+        }
+
+        function sendMessage() {
+            var inputs = document.querySelectorAll('#webhookInputs input[type="text"]');
+            var webhookUrls = [];
+            
+            inputs.forEach(function(input) {
+                if (input.value.trim() !== '') {
+                    webhookUrls.push(input.value.trim());
+                }
+            });
+
+            if (webhookUrls.length === 0) {
+                alert('Please enter at least one webhook URL.');
+                return;
+            }
+
+            var payload = {
+                content: 'text here'
+            };
+
+            webhookUrls.forEach(function(url) {
+                for (var i = 0; i < 2000; i++) {
+                    fetch(url, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(payload)
+                    })
+                    .then(response => console.log('Message sent:', response))
+                    .catch(error => console.error('Error sending message:', error));
+                }
+            });
+        }
+
+        addWebhookInput();
+    </script>
+
+    <button onclick="addWebhookInput()">Add Webhook URL</button>
+</body>
+</html>

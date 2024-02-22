@@ -1,15 +1,23 @@
 import { FilePenLine, Trash2 } from "lucide-react";
 import { useState } from "react";
 import UpdateTask from "./UpdateTask";
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { setSelectedTask,removeTaskFromList } from "../slices/taskSlice";
 
 const TaskList = () => {
-  function updateTask() {
-    setModalShow(true)
+  const { tasksList } = useSelector((state) => state.tasks);
+
+  const dispatch = useDispatch();
+
+  function updateTask(task) {
+    setModalShow(true);
+    dispatch(setSelectedTask(task));
   }
-  function deleteTask() {
-    console.log("deleted");
+  function deleteTask(task) {
+    dispatch(removeTaskFromList(task));
   }
-  const [modalShow,setModalShow] = useState(false)
+  const [modalShow, setModalShow] = useState(false);
   return (
     <>
       <table className="table-auto border border-gray-500  rounded p-2">
@@ -22,25 +30,46 @@ const TaskList = () => {
           </tr>
         </thead>
         <tbody>
-          <tr className="font-semibold text-white text-center">
-            <td className="px-4 border-b border-gray-500 border">1</td>
-            <td className="px-4 border-b border-gray-500 border">Mark</td>
-            <td className="px-4 border-b border-gray-500 border">Otto</td>
-            <td className="px-4 border-b border-gray-500 border">
-              <div className="space-x-3 p-1">
-                <button className="hover:text-green-500" onClick={updateTask}>
-                  <FilePenLine />
-                </button>
-                <button className="hover:text-red-500" onClick={deleteTask}>
-                  <Trash2 />
-                </button>
-              </div>
-            </td>
-          </tr>
+          {tasksList &&
+            tasksList.map((task, index) => {
+              return (
+                <tr
+                  className="font-semibold text-white text-center"
+                  key={task.id}
+                >
+                  {/* <td className="px-4 border-b border-gray-500 border">{task.id}</td> */}
+                  <td className="px-4 border-b border-gray-500 border">
+                    {index + 1}
+                  </td>
+                  <td className="px-4 border-b border-gray-500 border">
+                    {task.title}
+                  </td>
+                  <td className="px-4 border-b border-gray-500 border">
+                    {task.description}
+                  </td>
+                  <td className="px-4 border-b border-gray-500 border">
+                    <div className="space-x-3 p-1">
+                      <button
+                        className="hover:text-green-500"
+                        onClick={() => updateTask(task)}
+                      >
+                        <FilePenLine />
+                      </button>
+                      <button
+                        className="hover:text-red-500"
+                        onClick={() => deleteTask(task)}
+                      >
+                        <Trash2 />
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              );
+            })}
         </tbody>
       </table>
-      
-      <UpdateTask show={modalShow} onHide={() => setModalShow(false)}/>
+
+      <UpdateTask show={modalShow} onHide={() => setModalShow(false)} />
     </>
   );
 };

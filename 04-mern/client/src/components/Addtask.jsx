@@ -1,12 +1,20 @@
+import { useDispatch } from "react-redux";
 import { useState } from "react";
 
+import { addTaskToList } from "../slices/taskSlice";
+
 const Addtask = () => {
+  const dispatch = useDispatch();
+
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
 
   function addTask(e) {
-    console.log({title,description});
+    console.log({ title, description });
     e.preventDefault();
+    dispatch(addTaskToList({ title, description }));
+    setTitle("");
+    setDescription("")
   }
 
   return (

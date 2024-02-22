@@ -1,19 +1,36 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import propTypes from "prop-types";
 
+import { useSelector } from "react-redux";
+import { updateTaskList } from "../slices/taskSlice";
+import { useDispatch } from "react-redux";
+
 const UpdateTask = ({ show, onHide }) => {
+  const { selectedTask } = useSelector((state) => state.tasks);
+
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
+  const [id, setId] = useState(0);
 
-  function updateTask(e) {
-    e.preventDefault();
-    console.log({ title, description });
+  const dispatch = useDispatch();
+
+  function updateTask() {
+    onHide(false);
+    dispatch(updateTaskList({ id, title, description }));
   }
 
   function closeModal() {
     onHide();
   }
+
+  useEffect(() => {
+    if (Object.keys(selectedTask).length !== 0) {
+      setTitle(selectedTask.title);
+      setDescription(selectedTask.description);
+      setId(selectedTask.id);
+    }
+  }, [selectedTask]);
 
   return (
     <>
@@ -67,7 +84,7 @@ const UpdateTask = ({ show, onHide }) => {
                             className="bg-teal-500 font-semibold px-3 py-1 rounded mt-3 hover:bg-teal-600 transition-all duration-300 w-full"
                             onClick={updateTask}
                           >
-                            Add Task
+                            Update Task
                           </button>
                         </div>
                       </div>

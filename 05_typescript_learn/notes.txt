@@ -1,1 +1,9 @@
-tsc --init -- ts.json
+Packages For TypeScript :
+   npm i typescript -D
+   tsc --init   -> typescript Config
+
+
+
+
+Run Single Files
+   tsc .\app\src\index.ts <- Path

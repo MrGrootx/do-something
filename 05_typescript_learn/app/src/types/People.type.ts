@@ -1,1 +1,5 @@
-export type People = { name: string | null; age: number };
+export type People = {
+  firstName: string | null;
+  lastName: string | null;
+  age: number | undefined;
+};

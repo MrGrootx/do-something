@@ -8,6 +8,24 @@ app.use(express.json());
 
 const PORT = process.env.PORT || 3000;
 
+const loggingMiddleware = (req, res, next) => {
+  console.log(`${req.method} - ${req.url}`);
+  next();
+};
+
+const resolveIndexUserId = (req, res, next) => {
+  const {
+    params: { id },
+  } = req;
+  const parsedid = parseInt(id);
+  if (isNaN(parsedid)) return res.sendStatus(400);
+
+  const findUserIndex = mockUser.findIndex((user) => user.id === parsedid);
+  if (findUserIndex == -1) return res.sendStatus(404);
+  req.findUserIndex = findUserIndex;
+  next();
+};
+
 app.get("/", (req, res) => {
   res.status(200).send({
     mgs: "Hello World!",
@@ -31,7 +49,7 @@ const mockUser = [
     email: "bob@example.com",
   },
 ];
-
+app.use(loggingMiddleware);
 app.get("/api/users", (req, res) => {
   res.status(200).send(mockUser);
 });
@@ -56,6 +74,7 @@ app.get("/api/users/:id", (req, res) => {
 
   const findUser = mockUser.find((user) => user.id === parsedid);
   if (!findUser) return res.status(404).send({ err: "User not found" });
+  console.log(findUser);
   return res.status(200).send(findUser);
 });
 
@@ -79,22 +98,11 @@ app.get("/api/products", (req, res) => {
   ]);
 });
 
-app.put("/api/users/:id", (req, res) => {
-  const {
-    body,
-    params: { id },
-  } = req;
-  const parsedid = parseInt(id);
-  if (isNaN(parsedid)) return res.sendStatus(400)
-  
-  const findUserIndex = mockUser.findIndex((user) => user.id === parsedid);
-  console.log(findUserIndex);
+app.put("/api/users/:id", resolveIndexUserId, (req, res) => {
+  const { body, findUserIndex } = req;
 
-  if (findUserIndex == -1) return res.sendStatus(404);
-
-
-  mockUser[findUserIndex] = { id: parsedid, ...body };
-  return res.sendStatus(200)
+  mockUser[findUserIndex] = { id: mockUser[findUserIndex].id, ...body };
+  return res.sendStatus(200);
 });
 
 app.listen(PORT, () => {

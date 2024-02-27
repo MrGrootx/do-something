@@ -1,0 +1,102 @@
+[
+  {
+    "id": 1,
+    "name": "Pizza Margherita",
+    "img": "https://cdn.pixabay.com/photo/2017/12/09/08/18/pizza-3007395_1280.jpg",
+    "amt": 10.99,
+    "Shop": "Pizza Palace",
+    "ftype": "Pizza",
+    "seller": "Pizza Palace",
+    "category": "Food"
+  },
+  {
+    "id": 2,
+    "name": "Sushi Platter",
+    "img": "https://www.sushiya.in/cdn/shop/files/IMG20230816150632.jpg?v=1692259653&width=823  ",
+    "amt": 22.5,
+    "Shop": "Sushi Haven",
+    "ftype": "Sushi",
+    "seller": "Sushi Haven",
+    "category": "Food"
+  },
+  {
+    "id": 3,
+    "name": "Burger Combo",
+    "img": "https://www.sushiya.in/cdn/shop/files/IMG20230817152605.jpg?v=1692272288&width=823",
+    "amt": 12.99,
+    "Shop": "Burger Barn",
+    "ftype": "Burger",
+    "seller": "Burger Barn",
+    "category": "Food"
+  },
+  {
+    "id": 4,
+    "name": "Pasta Primavera",
+    "img": "https://www.themediterraneandish.com/wp-content/uploads/2023/07/TMD-Primavera-WEB-1.jpg",
+    "amt": 15.75,
+    "Shop": "Pasta Paradise",
+    "ftype": "Pasta",
+    "seller": "Pasta Paradise",
+    "category": "Food"
+  },
+  {
+    "id": 5,
+    "name": "Taco Tuesday",
+    "img": "https://th.bing.com/th/id/OIP.MgfxhjmcArXXWB_J6LdbjQHaHa?rs=1&pid=ImgDetMain",
+    "amt": 8.99,
+    "Shop": "Taco Time",
+    "ftype": "Taco",
+    "seller": "Taco Time",
+    "category": "Food"
+  },
+  {
+    "id": 6,
+    "name": "Pad Thai Special",
+    "img": "https://thewoksoflife.com/wp-content/uploads/2020/09/pad-thai-20.jpg",
+    "amt": 11.5,
+    "Shop": "Thai Taste",
+    "ftype": "Pad Thai",
+    "seller": "Thai Taste",
+    "category": "Food"
+  },
+  {
+    "id": 7,
+    "name": "Sushi Rolls Combo",
+    "img": "https://www.sushiya.in/cdn/shop/files/IMG20230817160334.jpg?v=1692272453&width=823",
+    "amt": 18.99,
+    "Shop": "Sushi Sensation",
+    "ftype": "Sushi",
+    "seller": "Sushi Sensation",
+    "category": "Food"
+  },
+  {
+    "id": 8,
+    "name": "Mediterranean Platter",
+    "img": "https://cdn.pixabay.com/photo/2017/05/07/08/56/pancakes-2291908_1280.jpg",
+    "amt": 20.99,
+    "Shop": "Medi Delight",
+    "ftype": "Pancake",
+    "seller": "Medi Delight",
+    "category": "Food"
+  },
+  {
+    "id": 9,
+    "name": "Vegetarian Delight",
+    "img": "https://cdn.pixabay.com/photo/2017/06/02/18/24/fruit-2367029_1280.jpg",
+    "amt": 14.99,
+    "Shop": "Green Garden",
+    "ftype": "Vegetable",
+    "seller": "Green Garden",
+    "category": "Food"
+  },
+  {
+    "id": 10,
+    "name": "BBQ Feast",
+    "img": "https://cdn.pixabay.com/photo/2016/06/15/19/09/food-1459693_1280.jpg",
+    "amt": 25.99,
+    "Shop": "Smokehouse Grill",
+    "ftype": "BBQ",
+    "seller": "Smokehouse Grill",
+    "category": "Food"
+  }
+]

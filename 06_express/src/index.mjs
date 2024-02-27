@@ -1,6 +1,14 @@
 import express from "express";
+import {
+  query,
+  validationResult,
+  body,
+  matchedData,
+  checkSchema,
+} from "express-validator";
 
 import dotenv from "dotenv";
+import { createUserValidationSchema } from "./utils/validationSchemas.mjs";
 dotenv.config();
 
 const app = express();
@@ -50,16 +58,41 @@ const mockUser = [
   },
 ];
 app.use(loggingMiddleware);
-app.get("/api/users", (req, res) => {
-  res.status(200).send(mockUser);
-});
+app.get(
+  "/api/users",
+  query("filter")
+    .isString()
+    .notEmpty()
+    .withMessage("Must not be empty")
+    .isLength({ min: 3, max: 10 })
+    .withMessage("Must be at least 3-10 char"),
+  (req, res) => {
+    const { filter, value } = req;
+    const result = validationResult(req);
+    console.log(result);
+    if (filter && value) {
+      return res
+        .status(200)
+        .send(mockUser.filter((user) => user[filter] === value));
+    }
+    return res.status(200).send(mockUser);
+  }
+);
 
-app.post("/api/users", (req, res) => {
-  console.log(req.body);
-  const { body } = req;
+app.post("/api/users", checkSchema(createUserValidationSchema), (req, res) => {
+  const result = validationResult(req);
+  // console.log(result);
+
+  if (!result.isEmpty())
+    return res.status(400).send({
+      err: result.array(),
+    });
+
+  const data = matchedData(req);
+
   const newUser = {
     id: mockUser[mockUser.length - 1].id + 1,
-    ...body,
+    ...data,
   };
   mockUser.push(newUser);
   return res.status(201).send(newUser);

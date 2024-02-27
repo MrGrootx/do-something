@@ -19,9 +19,9 @@ app.use(express.json())
 // DB connection
 db.connect(process.env.MONGODB)
   .then(() => {
-    console.log("🟢 Database Connected");
+    console.log("Connected");
   })
-  .catch((e) => console.log(e));
+  .catch((e) => console.log(e))
 
 
 

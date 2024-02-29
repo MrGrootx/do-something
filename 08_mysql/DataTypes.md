@@ -1,0 +1,7 @@
+### Types
+CHAR
+VARCHAR
+TEXT
+
+
+SHOW CHARACTER SET;

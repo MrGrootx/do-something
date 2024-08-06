@@ -1,6 +1,8 @@
 import routerS from 'express'
 import {check,validationResult} from 'express-validator'
 
+import users  from '../db.js'
+
 const router = routerS.Router()
 
 
@@ -19,6 +21,16 @@ router.post('/signup',[
    if (!error.isEmpty()) {
       return res.status(400).json({
          error: error.array()
+      })
+   }
+
+   // database
+
+   const user = users.find((user) => user.email === email);
+
+   if (user) {
+      return res.status(400).json({
+         "msg": "User already exists"
       })
    }
 

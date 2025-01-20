@@ -32,3 +32,31 @@ else
    print("file doesn't exist")
 end
 ]]--
+
+-- print('hi')
+
+
+local function Sum(...)
+
+   local sums = 0
+
+   for _, value in ipairs({...}) do
+      -- if type(value) == 'number' then
+      --    print('yes it is a number')
+      --    break
+      -- end
+
+      if value == 1 then
+         print('yes it is 1')
+         break
+      elseif value == 2 then
+         print('yes this value has 2 also')
+      else
+         print('no it is not a number')
+         break
+      end
+   end
+   
+end
+
+Sum(2,3,4,5,6,7,8,9,10,55)
